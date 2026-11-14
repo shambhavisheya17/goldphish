@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Goldphish",
+  "version": "0.1.0",
+  "description": "Privacy-first, pre-navigation phishing detection for links in Gmail and WhatsApp Web.",
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://web.whatsapp.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

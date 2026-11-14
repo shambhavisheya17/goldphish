@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goldphish – Link check</title>
+  <style>
+    body { font-family: "Times New Roman", serif; background:#f4f7fb; margin:0; display:flex; justify-content:center; padding:48px 16px; }
+    .card { background:#fff; max-width:560px; width:100%; border:2px solid #2E74B5; border-radius:10px; padding:28px 32px; }
+    h1 { margin:0 0 4px; font-size:26px; }
+    .badge { display:inline-block; padding:3px 12px; border-radius:12px; color:#fff; font-weight:bold; font-size:14px; margin:8px 0 16px; }
+    .low{background:#2e7d32} .medium{background:#ef8f00} .high{background:#d32f2f} .blocked{background:#8b0000}
+    .url { word-break:break-all; background:#eef2f7; padding:10px; border-radius:6px; font-family:monospace; font-size:13px; }
+    ul { padding-left:20px; } li { margin:6px 0; }
+    .actions { margin-top:24px; display:flex; gap:12px; }
+    button { font-size:15px; padding:10px 18px; border-radius:6px; border:1px solid #2E74B5; cursor:pointer; font-family:inherit; }
+    #back { background:#2E74B5; color:#fff; }
+    #go { background:#fff; color:#b71c1c; border-color:#b71c1c; }
+    #go[hidden] { display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Goldphish</h1>
+    <div id="badge" class="badge">Checking…</div>
+    <p>You were about to open:</p>
+    <div id="url" class="url"></div>
+    <p><strong>Why this link was flagged:</strong></p>
+    <ul id="reasons"></ul>
+    <div class="actions">
+      <button id="back">Go back (recommended)</button>
+      <button id="go">Proceed anyway</button>
+    </div>
+  </div>
+  <script src="warning.js"></script>
+</body>
+</html>
